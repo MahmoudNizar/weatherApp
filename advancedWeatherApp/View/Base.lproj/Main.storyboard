@@ -79,6 +79,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="0.17867080479452055" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="rp1-gm-CYs" firstAttribute="leading" secondItem="iT1-Tm-3hd" secondAttribute="leading" id="14u-4a-q6c"/>
                                     <constraint firstItem="7tS-6a-zjV" firstAttribute="leading" secondItem="oci-jy-6KM" secondAttribute="leading" constant="8" id="5OC-ue-dh8"/>
@@ -140,6 +141,10 @@
                                         </collectionViewCellContentView>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="JPF-Iu-ssx"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="vaE-Pk-KW8"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -167,6 +172,15 @@
                             <constraint firstItem="g0r-mk-4TB" firstAttribute="height" secondItem="WrT-40-bAG" secondAttribute="height" multiplier="0.214393" id="zsP-lR-8oZ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bigWeatherIcon" destination="7tS-6a-zjV" id="eKK-OO-K1S"/>
+                        <outlet property="cityName" destination="dgt-2V-E23" id="ZHo-dj-Wnw"/>
+                        <outlet property="dailyCollectionView" destination="nIk-zB-xks" id="nGO-cu-hdV"/>
+                        <outlet property="dateOfToday" destination="gd6-xO-3fd" id="0pS-O1-EDV"/>
+                        <outlet property="maxAndMinTemp" destination="rp1-gm-CYs" id="5tY-0X-c88"/>
+                        <outlet property="smallWeatherIcon" destination="xTX-IZ-Bfw" id="Rqs-oN-SO2"/>
+                        <outlet property="tempreature" destination="iT1-Tm-3hd" id="XKH-6S-Wg7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
