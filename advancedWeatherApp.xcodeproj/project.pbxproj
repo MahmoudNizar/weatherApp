@@ -58,13 +58,29 @@
 			children = (
 				1EC3B1992779E5BB0078EA55 /* AppDelegate.swift */,
 				1EC3B19B2779E5BB0078EA55 /* SceneDelegate.swift */,
-				1EC3B19D2779E5BB0078EA55 /* ViewController.swift */,
-				1EC3B19F2779E5BB0078EA55 /* Main.storyboard */,
+				1EC3B1B02779F6AA0078EA55 /* Controller */,
+				1EC3B1AF2779F6A20078EA55 /* View */,
 				1EC3B1A22779E5BD0078EA55 /* Assets.xcassets */,
 				1EC3B1A42779E5BD0078EA55 /* LaunchScreen.storyboard */,
 				1EC3B1A72779E5BD0078EA55 /* Info.plist */,
 			);
 			path = advancedWeatherApp;
+			sourceTree = "<group>";
+		};
+		1EC3B1AF2779F6A20078EA55 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EC3B19F2779E5BB0078EA55 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1EC3B1B02779F6AA0078EA55 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1EC3B19D2779E5BB0078EA55 /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,7 +312,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = comHashim.advancedWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,7 +331,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = comHashim.advancedWeatherApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
