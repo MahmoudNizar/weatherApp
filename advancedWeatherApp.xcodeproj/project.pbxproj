@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E3D01B7277A4ECC00E677AF /* DailyWeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E3D01B6277A4ECC00E677AF /* DailyWeatherCollectionViewCell.swift */; };
 		1EC3B19A2779E5BB0078EA55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3B1992779E5BB0078EA55 /* AppDelegate.swift */; };
 		1EC3B19C2779E5BB0078EA55 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3B19B2779E5BB0078EA55 /* SceneDelegate.swift */; };
 		1EC3B19E2779E5BB0078EA55 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC3B19D2779E5BB0078EA55 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		19BB9325F6B001E07B94E316 /* Pods-advancedWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-advancedWeatherApp.release.xcconfig"; path = "Target Support Files/Pods-advancedWeatherApp/Pods-advancedWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
+		1E3D01B6277A4ECC00E677AF /* DailyWeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCollectionViewCell.swift; sourceTree = "<group>"; };
 		1EC3B1962779E5BB0078EA55 /* advancedWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = advancedWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC3B1992779E5BB0078EA55 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EC3B19B2779E5BB0078EA55 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				1EC3B19F2779E5BB0078EA55 /* Main.storyboard */,
+				1E3D01B6277A4ECC00E677AF /* DailyWeatherCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1EC3B19E2779E5BB0078EA55 /* ViewController.swift in Sources */,
+				1E3D01B7277A4ECC00E677AF /* DailyWeatherCollectionViewCell.swift in Sources */,
 				1EC3B19A2779E5BB0078EA55 /* AppDelegate.swift in Sources */,
 				1EC3B1B52779FD8F0078EA55 /* WeatherManager.swift in Sources */,
 				1EC3B19C2779E5BB0078EA55 /* SceneDelegate.swift in Sources */,

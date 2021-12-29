@@ -13,13 +13,16 @@ class TheWeather {
     // Properties:
     let temp, maxTemp, minTemp: Double
     let id:Int
+    let city, country:String
     
     // Initializer
-    init(temp:Double, maxTemp:Double, minTemp:Double, id:Int) {
+    init(temp:Double, maxTemp:Double, minTemp:Double, id:Int, city:String, country:String) {
         self.temp = temp
         self.maxTemp = maxTemp
         self.minTemp = minTemp
         self.id = id
+        self.city = city
+        self.country = country
     }
     
     // Computed Properties
@@ -37,7 +40,7 @@ class TheWeather {
     var conditionName: String {
         switch id {
         case 200...232:
-            return "cloud.bolt"
+            return "cloud"
         case 300...321:
             return "cloud.drizzle"
         case 500...531:
@@ -54,5 +57,5 @@ class TheWeather {
             return "cloud"
         }
     }
-    
+
 }
