@@ -40,6 +40,7 @@ struct WeatherManager {
             let city        = weather.city.name
             let country     = weather.city.country
             let theWeather  = TheWeather(temp: temp, maxTemp: maxTemp, minTemp:  minTemp,id: conID, city: city, country: country)
+            
             delegate?.data(weatherManager: self, theWeather: theWeather)
             delegate?.passData(main: weather)
             // error

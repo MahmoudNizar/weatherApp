@@ -33,21 +33,44 @@ class ViewController: UIViewController {
         dateOfToday.text = getDayForDate()
         dateOfToday.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
+        dailyCollectionView.backgroundColor = .none
+        
+        
     }
     
-    
     private func getDayForDate() -> String {
-        
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d, yyyy h:mm a"
         let date = Date()
         let dateString = dateFormatter.string(from: date)
         return dateString
     }
+}
+
+//MARK:- Location Manager
+
+extension ViewController: CLLocationManagerDelegate {
     
-    //MARK:- WeatherManagerDelegate Protocol
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let location = locations.last {
+    
+            locationManger.stopUpdatingLocation()
+            let lat = location.coordinate.latitude
+            let lon = location.coordinate.longitude
+            
+            print("Longitude \(lon), Latitude \(lat)")
+            weatherManager.getWeatherDate(lati: lat, long: lon)
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
     
 }
+    //MARK:- WeatherManagerDelegate Protocol
+    
+
 extension ViewController: WeatherManagerDelegate {
     
     func data(weatherManager: WeatherManager, theWeather: TheWeather) {
@@ -71,32 +94,9 @@ extension ViewController: WeatherManagerDelegate {
     
 }
 
-//MARK:- Location Manager
+//MARK:- UICollectionView     dataSource
 
-extension ViewController: CLLocationManagerDelegate {
-    
-    func FetchWeather(){
-        
-    }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.last {
-            locationManger.stopUpdatingLocation()
-            let lat = location.coordinate.latitude
-            let lon = location.coordinate.longitude
-            
-            print("Longitude \(lon), Latitude \(lat)")
-            weatherManager.getWeatherDate(lati: lat, long: lon)
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
-    }
-    
-}
-//MARK:- CollectionView
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+extension ViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return secondMainClass.count
@@ -105,15 +105,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = dailyCollectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! DailyWeatherCollectionViewCell
-        let theData = secondMainClass[indexPath.row]
+        let theData = secondMainClass[indexPath.row]        // data by indexPath
+        
         let max = String(format: "%.0f",  theData.main.tempMax)
         let min = String(format: "%.0f",  theData.main.tempMin)
         
         cell.maxAndMin.text = "\(max)/\(min)"
         return cell
     }
-    
-    
+}
+//MARK:- UICollectionView Delegate & FlowLayout
+
+extension ViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 50, height: 150)
+    }
     
 }
-
